@@ -39,6 +39,8 @@
    cp -r .vim ~
    ```
 
+1. Install the iTerm color scheme and profile.
+
 1. Add the following aliases to `~/.zshrc`:
 
    ```console
