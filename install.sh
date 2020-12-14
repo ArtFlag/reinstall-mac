@@ -11,6 +11,7 @@ function install_vscode_extensions() {
   code --install-extension errata-ai.vale-servera
   code --install-extension esbenp.prettier-vscode
   code --install-extension gitlab.gitlab-workflow
+  code --install-extension oderwat.indent-rainbow
   code --install-extension shuworks.vscode-table-formatter
   code --install-extension takumii.markdowntable
   code --install-extension tuxtina.json2yaml
