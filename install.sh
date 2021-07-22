@@ -4,16 +4,16 @@ function install_vscode_extensions() {
   # Installs the VSCode extensions
   printf "Installing extensions...\n"
   code --install-extension 42crunch.vscode-openapi
-  code --install-extension blzjns.vscode-raml
+  code --install-extension artflag.aubergine
   code --install-extension davidanson.vscode-markdownlint
   code --install-extension donjayamanne.python
   code --install-extension eamodio.gitlens
   code --install-extension errata-ai.vale-servera
   code --install-extension esbenp.prettier-vscode
-  code --install-extension gitlab.gitlab-workflow
+  code --install-extension jounqin.vscode-mdx
+  code --install-extension nhoizey.gremlins
   code --install-extension oderwat.indent-rainbow
   code --install-extension shuworks.vscode-table-formatter
-  code --install-extension takumii.markdowntable
   code --install-extension tuxtina.json2yaml
   code --install-extension vscodevim.vim
   code --install-extension vstirbu.vscode-mermaid-preview
@@ -42,7 +42,7 @@ function install_utilities() {
   printf "Checking if Homebrew is installed...\n"
   if ! command -v brew >/dev/null; then
     printf "\nInstalling Homebrew...\n\n"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   else
     printf "\nUpdating Homebrew...\n\n"
     brew update
