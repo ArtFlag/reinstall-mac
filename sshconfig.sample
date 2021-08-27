@@ -1,0 +1,17 @@
+Host github.com
+  HostName github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 600
+  TCPKeepAlive yes
+  IPQoS=throughput
+
+Host me.github.com
+  HostName github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_perso
+  ServerAliveInterval 600
+  TCPKeepAlive yes
+  IPQoS=throughput%
