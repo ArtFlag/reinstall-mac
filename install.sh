@@ -51,7 +51,7 @@ function install_utilities() {
   if [[ $(command -v code 2>&1 > /dev/null; echo $?) -eq 0 ]]; then
     printf "VS Code found\n"
   else
-    brew cask install "visual-studio-code"
+    brew install --cask "visual-studio-code"
     printf "\n\n"
     read -p "Launch VSCode once, then close it (cmd-Q). When it is closed, press Enter in this window to continue... "
   fi
@@ -79,12 +79,11 @@ printf "\n\nSetting up git...\n\n"
 
     printf "Adding ssh key to ssh-agent\n"
     eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/id_rsa
+    ssh-add -K ~/.ssh/id_ed25519
 
-    printf "\nCopying ssh key to pasteboard. You can copy the key again by running 'pbcopy <~/.ssh/id_rsa.pub'\n"
-    pbcopy <~/.ssh/id_rsa.pub
-    printf "Done, you can paste it in GitHub https://github.com/settings/keys\nand in GitLab https://gitlab.com/profile/keys"
-    printf "\n\n"
+    printf "\nCopying ssh key to clipboard. You can copy the key again by running 'pbcopy <~/.ssh/id_ed25519.pub'\n"
+    pbcopy <~/.ssh/id_ed25519.pub
+    printf "Done, you can paste it in GitHub https://github.com/settings/keys\nand in GitLab https://gitlab.com/profile/keys\n\n"
     read -p "Set up git config? (y,n): " doit
     printf "\n"
     case $doit in
