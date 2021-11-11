@@ -8,7 +8,7 @@ function install_vscode_extensions() {
   code --install-extension davidanson.vscode-markdownlint
   code --install-extension donjayamanne.python
   code --install-extension eamodio.gitlens
-  code --install-extension errata-ai.vale-servera
+  code --install-extension errata-ai.vale-server
   code --install-extension esbenp.prettier-vscode
   code --install-extension jounqin.vscode-mdx
   code --install-extension nhoizey.gremlins
