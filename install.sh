@@ -97,6 +97,7 @@ printf "\n\nSetting up git...\n\n"
       git config --global mergetool.p4merge.path /Applications/p4merge.app/Contents/MacOS/p4merge
       git config --global mergetool.keepBackup false
       git config --global pull.rebase true
+      git config --global fetch.prune true
       ;;
     n | N) echo "Skipping" ;;
     esac
