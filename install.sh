@@ -5,6 +5,7 @@ function install_vscode_extensions() {
   printf "Installing extensions...\n"
   code --install-extension 42crunch.vscode-openapi
   code --install-extension artflag.aubergine
+  code --install-extension bierner.markdown-preview-github-styles
   code --install-extension davidanson.vscode-markdownlint
   code --install-extension donjayamanne.python
   code --install-extension eamodio.gitlens
@@ -12,8 +13,9 @@ function install_vscode_extensions() {
   code --install-extension esbenp.prettier-vscode
   code --install-extension jounqin.vscode-mdx
   code --install-extension nhoizey.gremlins
-  code --install-extension oderwat.indent-rainbow
+  code --install-extension redhat.vscode-yaml
   code --install-extension shuworks.vscode-table-formatter
+  code --install-extension silvenon.mdx
   code --install-extension tuxtina.json2yaml
   code --install-extension vscodevim.vim
   code --install-extension vstirbu.vscode-mermaid-preview
@@ -23,12 +25,14 @@ function install_vscode_extensions() {
 }
 
 function install_python_tooling() {
+  brew install pyenv
+  brew install pipenv
   printf "\n\nInstalling poetry...\n"
   curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
   export PATH="$PATH:$HOME/.poetry/bin"
-  printf "\n\nInstalling Python 3.8.6..."
-  pyenv install 3.8.6
-  pyenv global 3.8.6
+  printf "\n\nInstalling Python..."
+  pyenv install 3.10.4
+  pyenv global 3.10.4
   echo "export PATH=\"/usr/local/opt/coreutils/libexec/gnubin:\${PATH}\"" >> ~/.zshrc
   echo "export PATH=\"\${HOME}/.poetry/bin:\${PATH}\"" >> ~/.zshrc
   echo "if command -v pyenv 1>/dev/null 2>&1; then" >> ~/.zshrc
@@ -63,7 +67,6 @@ function install_utilities() {
     y | Y) install_python_tooling ;;
     n | N) echo "Skipping python\n" ;;
     esac
-
 }
 
 function setup_git() {
@@ -83,12 +86,13 @@ printf "\n\nSetting up git...\n\n"
 
     printf "\nCopying ssh key to clipboard. You can copy the key again by running 'pbcopy <~/.ssh/id_ed25519.pub'\n"
     pbcopy <~/.ssh/id_ed25519.pub
-    printf "Done, you can paste it in GitHub https://github.com/settings/keys\nand in GitLab https://gitlab.com/profile/keys\n\n"
+    printf "Done. Paste it in GitHub https://github.com/settings/keys\n\n"
     read -p "Set up git config? (y,n): " doit
     printf "\n"
     case $doit in
     y | Y)
-      read -p "First name and last name: " fn ln
+      read -p "Enter your first name (no spaces): " fn
+      read -p "Enter your last name (no spaces): " ln
       git config --global credential.helper store
       git config --global user.name "$fn $ln"
       git config --global user.email "$ssh_email"
@@ -113,6 +117,7 @@ install_utilities
 install_vscode_extensions
 setup_git
 mkdir ~/repos
+printf "Created ~/repos.\n"
 brew cleanup
 
-printf "Done."
+printf "Done. ✅\n"
