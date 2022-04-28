@@ -8,7 +8,11 @@
     "Red Component" : 0.43880558013916016,
     "Blue Component" : 0.99898606538772583
   },
-  "Transparency" : 0,
+  "Ansi 6 Color" : {
+    "Green Component" : 1,
+    "Red Component" : 0.34860008955001831,
+    "Blue Component" : 0.82062870264053345
+  },
   "Draw Powerline Glyphs" : true,
   "Bold Color" : {
     "Red Component" : 0.25490196078431371,
@@ -17,17 +21,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.58823529411764708
   },
-  "Normal Font" : "MesloLGS-NF-Regular 13",
-  "Guid" : "8DE22A17-99CB-407E-A5E4-6CC73345267D",
-  "Ansi 2 Color" : {
-    "Red Component" : 0.05934426560997963,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.46144760855318978,
-    "Alpha Component" : 1,
-    "Green Component" : 0.742919921875
-  },
-  "Rows" : 40,
-  "Default Bookmark" : "No",
+  "Normal Font" : "MesloLGS-NF-Regular 11",
   "Link Color" : {
     "Red Component" : 0.25490196078431371,
     "Color Space" : "sRGB",
@@ -35,6 +29,10 @@
     "Alpha Component" : 1,
     "Green Component" : 0.58823529411764708
   },
+  "Custom Directory" : "Yes",
+  "Rows" : 40,
+  "Default Bookmark" : "No",
+  "Right Option Key Sends" : 0,
   "Cursor Guide Color" : {
     "Red Component" : 0.70213186740875244,
     "Color Space" : "sRGB",
@@ -68,15 +66,15 @@
     "Red Component" : 0.90730977058410645,
     "Blue Component" : 0.93115901947021484
   },
-  "Working Directory" : "\/Users\/me\/repos",
+  "Working Directory" : "\/Users\/arthur\/repos",
   "Blinking Cursor" : false,
   "Disable Window Resizing" : true,
   "Sync Title" : false,
   "Prompt Before Closing 2" : false,
   "BM Growl" : true,
-  "Mouse Reporting" : true,
   "Command" : "",
   "Description" : "Default",
+  "Mouse Reporting" : true,
   "Screen" : -1,
   "Selection Color" : {
     "Red Component" : 0.24705882352941178,
@@ -93,6 +91,7 @@
     "Red Component" : 0.9887651801109314,
     "Blue Component" : 0.60766077041625977
   },
+  "Title Components" : 2,
   "Brighten Bold Text" : true,
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
@@ -300,7 +299,7 @@
   "Terminal Type" : "xterm-256color",
   "Visual Bell" : true,
   "Flashing Bell" : false,
-  "Silence Bell" : false,
+  "Silence Bell" : true,
   "Use Underline Color" : true,
   "Ansi 14 Color" : {
     "Red Component" : 0.25591314025223255,
@@ -309,7 +308,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.59195700748578484
   },
-  "Name" : "Default",
+  "Name" : "Custom",
   "Cursor Text Color" : {
     "Green Component" : 0,
     "Red Component" : 0,
@@ -327,24 +326,26 @@
     "Red Component" : 0.26286587119102478,
     "Blue Component" : 0.40253299474716187
   },
-  "Ansi 1 Color" : {
-    "Green Component" : 0.22098405659198761,
-    "Red Component" : 0.9871404767036438,
-    "Blue Component" : 0.25575384497642517
-  },
+  "Guid" : "8DE22A17-99CB-407E-A5E4-6CC73345267D",
   "Horizontal Spacing" : 1,
   "Ansi 3 Color" : {
     "Green Component" : 0.81672251224517822,
     "Red Component" : 0.99627053737640381,
     "Blue Component" : 0.19727933406829834
   },
-  "Custom Directory" : "Yes",
-  "Right Option Key Sends" : 0,
-  "Ansi 6 Color" : {
-    "Green Component" : 1,
-    "Red Component" : 0.34860008955001831,
-    "Blue Component" : 0.82062870264053345
+  "Ansi 4 Color" : {
+    "Red Component" : 0.25490196078431371,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.93725490196078431,
+    "Alpha Component" : 1,
+    "Green Component" : 0.58823529411764708
   },
+  "Ansi 5 Color" : {
+    "Green Component" : 0.13310989737510681,
+    "Red Component" : 0.986469566822052,
+    "Blue Component" : 0.43182668089866638
+  },
+  "Transparency" : 0,
   "Ansi 7 Color" : {
     "Red Component" : 0.85645603388547897,
     "Color Space" : "sRGB",
@@ -364,16 +365,16 @@
     "Red Component" : 0.98958194255828857,
     "Blue Component" : 0.42818409204483032
   },
-  "Ansi 4 Color" : {
-    "Red Component" : 0.25490196078431371,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.93725490196078431,
-    "Alpha Component" : 1,
-    "Green Component" : 0.58823529411764708
+  "Ansi 1 Color" : {
+    "Green Component" : 0.22098405659198761,
+    "Red Component" : 0.9871404767036438,
+    "Blue Component" : 0.25575384497642517
   },
-  "Ansi 5 Color" : {
-    "Green Component" : 0.13310989737510681,
-    "Red Component" : 0.986469566822052,
-    "Blue Component" : 0.43182668089866638
+  "Ansi 2 Color" : {
+    "Red Component" : 0.05934426560997963,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.46144760855318978,
+    "Alpha Component" : 1,
+    "Green Component" : 0.742919921875
   }
 }
