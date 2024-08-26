@@ -2,7 +2,7 @@ Host github.com
   HostName github.com
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
   ServerAliveInterval 600
   TCPKeepAlive yes
 
