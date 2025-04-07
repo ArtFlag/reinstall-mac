@@ -101,9 +101,6 @@ printf "\n\nSetting up git...\n\n"
       git config --global user.name "$fn $ln"
       git config --global user.email "$ssh_email"
       git config --global core.pager cat
-      git config --global merge.tool p4merge
-      git config --global mergetool.p4merge.path /Applications/p4merge.app/Contents/MacOS/p4merge
-      git config --global mergetool.keepBackup false
       git config --global pull.rebase true
       git config --global fetch.prune true
       git config --global push.autoSetupRemote true
@@ -119,7 +116,7 @@ printf "\n\nSetting up git...\n\n"
 ########################################
 
 install_utilities
-install_vscode_extensions
+# install_vscode_extensions
 setup_git
 mkdir ~/repos
 printf "✅ Created ~/repos.\n"
