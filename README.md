@@ -1,7 +1,8 @@
 # Reinstall
 
-- [Minimal install](#minimal-install)
-- [Complete install](#complete-install)
+- [Reinstall](#reinstall)
+  - [Minimal install](#minimal-install)
+  - [Complete install](#complete-install)
 
 ## Minimal install
 
@@ -47,67 +48,18 @@ git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
    sh ./install.sh
    ```
 
-1. Install [vim-plug](https://github.com/junegunn/vim-plug?tab=readme-ov-file).
-
 1. Neovim:
 
    ```console
-   mkdir ~/.config/nvim
-   touch ~/.config/nvim/init.vim
-   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-   mkdir ~/.config/nvim/vim-plug
-   touch ~/.config/nvim/vim-plug/plugins.vim
+   sh ./setup-neovim.sh
    ```
 
-1. Add this to `plugins.vim`:
+2. Install the iTerm profile.
 
-   ```lua
-   " auto-install vim-plug
-   if empty(glob('~/.config/nvim/autoload/plug.vim'))
-     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-     "autocmd VimEnter * PlugInstall
-     "autocmd VimEnter * PlugInstall | source $MYVIMRC
-   endif
-
-   call plug#begin('~/.config/nvim/autoload/plugged')
-     Plug 'vim-airline/vim-airline'
-     Plug 'vim-airline/vim-airline-themes'
-     " Plug 'VonHeikemen/midnight-owl.vim'
-     Plug 'Mofiqul/vscode.nvim'
-     Plug 'sheerun/vim-polyglot'
-     Plug 'scrooloose/NERDTree'
-     Plug 'jiangmiao/auto-pairs'
-   call plug#end()
-   ```
-
-1. Add this to `init.vim`:
-
-   ```lua
-   source $HOME/.config/nvim/vim-plug/plugins.vim
-   if (has("termguicolors"))
-    set termguicolors
-   endif
-   syntax on
-   let g:airline_theme='minimalist'
-   set nocompatible
-   set number
-   set nobackup
-   set showmode
-   set noerrorbells
-   filetype on
-   filetype plugin on
-   filetype indent on
-   ```
-
-1. Run `git config --global core.editor nvim`.
-1. Run `nvim` and run `:PlugInstall`.
-
-1. Install the iTerm profile.
-
-1. Add the following aliases to `~/.zshrc`:
+3. Add the following aliases to `~/.zshrc`:
 
    ```ini
+   export HOMEBREW_AUTO_UPDATE_SECS="100400"
    export REPOS="${HOME}/repos"
    export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
    export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -133,6 +85,7 @@ git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
    alias to='cd ${PATH_SERVICE}'
    alias toc='code ${PATH_SERVICE}'
    alias rdc='code ${PATH_DOCS}'
+   alias setGitUser='git config user.name "ArtFlag" && git config user.email "aflageul@tuta.io"'
    ```
 
-1. Work.
+4. Work.
