@@ -104,6 +104,9 @@ printf "\n\nSetting up git...\n\n"
       git config --global pull.rebase true
       git config --global fetch.prune true
       git config --global push.autoSetupRemote true
+      git config --global mergetool.keepBackup false
+      git config --global merge.tool vscode
+      git config --global mergetool.vscode.cmd "code --wait --merge \$REMOTE \$LOCAL \$BASE \$MERGED"
       ;;
     n | N) echo "Skipping" ;;
     esac
