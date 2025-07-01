@@ -85,6 +85,11 @@ git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
    alias to='cd ${PATH_SERVICE}'
    alias toc='code ${PATH_SERVICE}'
    alias rdc='code ${PATH_DOCS}'
+   alias rec='code ${REPOS}/recipes'
+   alias opr='gh pr create'
+   alias spr='gh pr view --web'
+   alias vr='gh repo view --web'
+   alias update_fork='git fetch upstream && git checkout main && git rebase upstream/main && git push'
    alias setGitUser='git config user.name "ArtFlag" && git config user.email "aflageul@tuta.io"'
    ```
 
