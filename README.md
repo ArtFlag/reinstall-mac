@@ -8,30 +8,14 @@
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-CPU=$(uname -p)
-if [[ "$CPU" == "arm" ]]; then #M1
-  echo "💻 ARM computer."
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-brew install romkatv/powerlevel10k/powerlevel10k
-echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/vi-mode
 ```
 
 ## Complete install
 
-1. Install [ohmyzsh](https://ohmyz.sh/) and [powerlevel10k](https://github.com/romkatv/powerlevel10k):
-
-   ```console
-   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-   brew install romkatv/powerlevel10k/powerlevel10k
-   echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-   git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/vi-mode
-   ```
+1. Run the minimal install.
 
 1. Set the plugin value in `~/.zshrc` to:
 
@@ -52,11 +36,12 @@ git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
 
    ```console
    sh ./setup-neovim.sh
+   mkdir ~/.config/ghostty/themes
+   cp arthur ~/.config/ghostty/themes
+   cp config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
    ```
 
-2. Install the iTerm profile.
-
-3. Add the following aliases to `~/.zshrc`:
+1. Add the following aliases to `~/.zshrc`:
 
    ```ini
    export HOMEBREW_AUTO_UPDATE_SECS="100400"
@@ -93,4 +78,4 @@ git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
    alias setGitUser='git config user.name "ArtFlag" && git config user.email "aflageul@tuta.io"'
    ```
 
-4. Work.
+1. Work.
