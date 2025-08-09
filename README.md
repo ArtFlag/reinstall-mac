@@ -1,27 +1,6 @@
-# Reinstall
+# Reinstall MacOS
 
-- [Reinstall](#reinstall)
-  - [Minimal install](#minimal-install)
-  - [Complete install](#complete-install)
-
-## Minimal install
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/vi-mode
-```
-
-## Complete install
-
-1. Run the minimal install.
-
-1. Set the plugin value in `~/.zshrc` to:
-
-   ```console
-   plugins=(git vi-mode zsh-autosuggestions)
-   ```
+## Install
 
 1. [Download the repo](https://github.com/ArtFlag/reinstall-mac/archive/refs/heads/master.zip) to
    your computer and unpack it.
@@ -32,18 +11,16 @@ git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
    sh ./install.sh
    ```
 
-1. Neovim:
-
-   ```console
-   sh ./setup-neovim.sh
-   mkdir ~/.config/ghostty/themes
-   cp arthur ~/.config/ghostty/themes
-   cp config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
-   ```
-
 1. Add the following aliases to `~/.zshrc`:
 
    ```ini
+   export ZSH="$HOME/.oh-my-zsh"
+   source $ZSH/oh-my-zsh.sh
+   eval "$(starship init zsh)"
+   eval "$(zoxide init zsh)"
+   source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+   plugins=(git vi-mode zoxide)
+
    export HOMEBREW_AUTO_UPDATE_SECS="100400"
    export REPOS="${HOME}/repos"
    export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
@@ -57,8 +34,9 @@ git clone https://github.com/nyquase/vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
    alias gmu='gcm && gl && gsw -'
    alias opr='gh pr create'
    alias spr='gh pr view --web'
-   alias ls='ls -GFh'
-   alias ll='ls -lsaGFh'
+   #alias ls='ls -GFh'
+   #alias ll='ls -lsaGFh'
+   alias ll='eza -l --icons --group-directories-first --no-permissions --no-user -s extension'
    alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
    alias check='brew update && echo "\n\nAPPS:" && brew outdated --cask --greedy && echo "\n\nPACKAGES:" && brew outdated && brew cleanup'
 
