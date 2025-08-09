@@ -34,7 +34,7 @@ truncation_symbol = ""
 
 [git_branch]
 symbol = ""
-format = '[[$symbol $branch](fg:#15943B)]($style)'
+format = '[$symbol $branch](fg:#15943B)'
 
 [git_status]
-format = '[[ ($all_status$ahead_behind )](fg:#159481)]($style)'
+format = '[[ ($all_status$ahead_behind )](fg:#627AD0)]($style)'
