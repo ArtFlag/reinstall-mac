@@ -61,13 +61,14 @@ function setup_git() {
     read -p "Set up git config? (y,n): " doit
     printf "\n"
     case $doit in
-      y | Y)
+      # y | Y)
         read -p "👋 Enter your first name (no spaces): " fn
         read -p "👋 Enter your last name (no spaces): " ln
         git config --global credential.helper store
         git config --global user.name "$fn $ln"
         git config --global user.email "$ssh_email"
         git config --global core.pager cat
+        git config --global core.editor "nvim"
         git config --global pull.rebase true
         git config --global fetch.prune true
         git config --global push.autoSetupRemote true
@@ -88,6 +89,10 @@ function setup_editors() {
   mkdir -p ~/.config/ghostty/themes
   cp ./ghostty/arthur ~/.config/ghostty/themes
   cp ./ghostty/config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+  # Download Catppuccin Macchiato theme for Ghostty
+  curl -fsSL "https://raw.githubusercontent.com/catppuccin/ghostty/main/themes/catppuccin-macchiato.conf" \
+    -o ~/.config/ghostty/themes/catppuccin-macchiato.conf
+  cp ./starship.toml ~/.config/starship.toml
 }
 
 ########################################

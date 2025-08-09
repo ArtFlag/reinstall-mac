@@ -1,6 +1,8 @@
-theme=arthur
+theme = catppuccin-macchiato.conf
 font-family = "MesloLGS NF"
-font-thicken
-window-padding-x = 10
-adjust-cell-height = "20%"
+font-size = 16
+window-padding-x = 20
+adjust-cell-height = "30%"
 working-directory = "/Users/arthur/repos"
+window-width = 110
+window-height = 20
