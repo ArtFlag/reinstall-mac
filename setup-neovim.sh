@@ -36,8 +36,8 @@ if has("termguicolors")
 endif
 
 syntax on
+colorscheme catppuccin-macchiato
 let g:airline_theme = 'minimalist'
-
 set nocompatible
 set number
 set nobackup
@@ -63,8 +63,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  " Plug 'VonHeikemen/midnight-owl.vim'
-  Plug 'Mofiqul/vscode.nvim'
+  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'sheerun/vim-polyglot'
   Plug 'scrooloose/NERDTree'
   Plug 'jiangmiao/auto-pairs'

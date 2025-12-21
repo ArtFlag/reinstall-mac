@@ -48,15 +48,16 @@
    # alias setup-fork='git remote add upstream (url) && git remote set-url --push upstream no_pushing'
    alias update-fork='git fetch upstream && git switch main && git rebase upstream/main && git push'
 
-   ## Docs repo aliases
+   ### Docs repo aliases
    alias ys='yarn start'
    alias yb='yarn build'
    alias yss='yarn serve'
+   alias rts='cd ${TALONSERVICEPATH}'
+   alias rtsc='code ${TALONSERVICEPATH}'
    alias rd='cd ${PATH_DOCS}'
-   alias to='cd ${PATH_SERVICE}'
-   alias toc='code ${PATH_SERVICE}'
    alias rdc='code ${PATH_DOCS}'
-   alias rec='code ${REPOS}/recipes'
+   alias rr='cd ${REPOS}/recipes'
+   alias rrc='code ${REPOS}/recipes'
    alias opr='gh pr create'
    alias spr='gh pr view --web'
    alias vr='gh repo view --web'

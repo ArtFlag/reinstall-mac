@@ -1,8 +1,10 @@
-theme = catppuccin-macchiato.conf
+theme = Catppuccin Macchiato
 font-family = "MesloLGS NF"
 font-size = 16
 window-padding-x = 20
 adjust-cell-height = "30%"
-working-directory = "/Users/arthur/repos"
+working-directory = "/Users/me/repos/docs"
 window-width = 110
 window-height = 20
+background-blur = true
+background-opacity = 1

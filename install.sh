@@ -85,12 +85,7 @@ function setup_git() {
 function setup_editors() {
   printf "\n\nSetting up neovim and ghostty...\n\n"
   sh ./setup-neovim.sh
-  mkdir -p ~/.config/ghostty/themes
-  cp ./ghostty/arthur ~/.config/ghostty/themes
   cp ./ghostty/config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
-  # Download Catppuccin Macchiato theme for Ghostty
-  curl -fsSL "https://raw.githubusercontent.com/catppuccin/ghostty/main/themes/catppuccin-macchiato.conf" \
-    -o ~/.config/ghostty/themes/catppuccin-macchiato.conf
   cp starship/starship.toml ~/.config/starship.toml
 }
 
