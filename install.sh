@@ -87,7 +87,25 @@ function setup_editors() {
   sh ./setup-neovim.sh
   cp ./ghostty/config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
   cp starship/starship.toml ~/.config/starship.toml
+  mkdir -p ~/.config/yt-dlp
   cp config/yt-dlp ~/.config/yt-dlp/config
+}
+
+function setup_aliases() {
+  printf "\nConfiguring shell aliases...\n"
+  REPO_PATH="$PWD"
+  ALIAS_FILE_PATH="${REPO_PATH}/.aliases"
+  LINE_TO_ADD="source ${ALIAS_FILE_PATH}"
+  ZSHRC_FILE="${HOME}/.zshrc"
+
+  if ! grep -qF -- "$LINE_TO_ADD" "$ZSHRC_FILE"; then
+    echo "" >> "$ZSHRC_FILE" # Add a newline for separation
+    echo "# Source personal aliases from reinstall-mac repo" >> "$ZSHRC_FILE"
+    echo "$LINE_TO_ADD" >> "$ZSHRC_FILE"
+    printf "✅ Added sourcing for .aliases to %s\n" "$ZSHRC_FILE"
+  else
+    printf "Sourcing for .aliases already configured in %s. Skipping.\n" "$ZSHRC_FILE"
+  fi
 }
 
 ########################################
@@ -100,4 +118,12 @@ setup_editors
 
 mkdir -p ~/repos
 printf "✅ Created ~/repos.\n"
+
+read -p "Set up shell aliases from .aliases file? (y,n): " doit
+printf "\n"
+case $doit in
+  y|Y) setup_aliases ;;
+  n|N) echo "Skipping alias setup." ;;
+esac
+
 printf "Done. ✅\n"
