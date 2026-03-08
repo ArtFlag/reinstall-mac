@@ -7,3 +7,4 @@
 --progress
 --console-title
 --output ~/Desktop/%(title)s.%(ext)s
+--sponsorblock-remove all
