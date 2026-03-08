@@ -40,13 +40,12 @@
    alias gmu='gcm && gl && gsw -'
    alias opr='gh pr create'
    alias spr='gh pr view --web'
-   #alias ls='ls -GFh'
-   #alias ll='ls -lsaGFh'
    alias ll='eza -la --icons --group-directories-first --no-permissions --no-user -s extension'
    alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
    alias check='brew update && echo "\n\nAPPS:" && brew outdated --cask --greedy && echo "\n\nPACKAGES:" && brew outdated && brew cleanup'
+   alias upgradestuff='brew update && brew upgrade && brew cleanup && upgrade_oh_my_zsh && bash <(curl -sSL https://spotx-official.github.io/run.sh)'
+   alias sshadd='ssh-add ~/.ssh/id_ed25519 && ssh-add ~/.ssh/perso'
    # alias setup-fork='git remote add upstream (url) && git remote set-url --push upstream no_pushing'
-   alias update-fork='git fetch upstream && git switch main && git rebase upstream/main && git push'
 
    ### Docs repo aliases
    alias ys='yarn start'
@@ -65,4 +64,10 @@
    alias setGitUser='git config user.name "ArtFlag" && git config user.email "aflageul@tuta.io"'
    ```
 
-1. Work.
+1. Run:
+
+   ```bash
+   bash <(curl -sSL https://spotx-official.github.io/run.sh)
+   ```
+
+3. Work.
