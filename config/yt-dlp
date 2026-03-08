@@ -1,0 +1,9 @@
+-f "bestvideo[height<=720]+bestaudio/best[height<=720]"
+--merge-output-format mkv
+--restrict-filenames
+--continue
+--embed-metadata
+--embed-thumbnail
+--progress
+--console-title
+--output ~/Desktop/%(title)s.%(ext)s

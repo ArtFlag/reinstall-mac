@@ -87,6 +87,7 @@ function setup_editors() {
   sh ./setup-neovim.sh
   cp ./ghostty/config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
   cp starship/starship.toml ~/.config/starship.toml
+  cp config/yt-dlp ~/.config/yt-dlp/config
 }
 
 ########################################
