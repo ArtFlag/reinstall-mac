@@ -31,7 +31,7 @@ alias check='brew update && echo "
 APPS:" && brew outdated --cask --greedy && echo "
 
 PACKAGES:" && brew outdated && brew cleanup'
-alias upgradestuff='brew update && brew upgrade && brew cleanup && upgrade_oh_my_zsh && bash <(curl -sSL https://spotx-official.github.io/run.sh)'
+alias upgradestuff='brew update && brew upgrade && brew cleanup && omz update && bash <(curl -sSL https://spotx-official.github.io/run.sh)'
 alias sshadd='ssh-add ~/.ssh/id_ed25519 && ssh-add ~/.ssh/perso'
 # alias setup-fork='git remote add upstream (url) && git remote set-url --push upstream no_pushing'
 
